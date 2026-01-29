@@ -29,7 +29,7 @@ int main(){
     // time complexity of order of n/2
     while(num != 0){
         if(num % 2 == 0){
-            
+            pow = pow 
         } 
     }
 }

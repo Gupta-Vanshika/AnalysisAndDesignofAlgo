@@ -19,6 +19,10 @@ int main(){
     clock_t start, end;
     double clock_per_time;
     srand(time(0));
+
+    ofstream outputFile("Search_performance_data.txt");    
+    outputFile << "Array Size\tTime (ms)" << endl; 
+    
     for(int i = 5; i <= 100; i = i + 5){
         size = i;
 
@@ -38,5 +42,10 @@ int main(){
 
         clock_per_time = (double(end - start)) / CLOCKS_PER_SEC * 1000000000;
         cout << size << "  " << clock_per_time << " ns" << endl;
+
+        outputFile << size << "\t\t" << clock_per_time << endl;
     }
+    outputFile.close();
+    cout << "\nData has been saved to 'Search_performance_data.txt'" << endl;
+
 }
